@@ -130,3 +130,19 @@ function allDone() {
      createH1.textContent = "All Done!"
  
      questionsDiv.appendChild(createH1);
+
+     // Paragraph
+     var createP = document.createElement("p");
+     createP.setAttribute("id", "createP");
+ 
+     questionsDiv.appendChild(createP); 
+
+     // Added if statement to calculate the time remaining then replace it with their score
+    if (secondsLeft >= 0) {
+        var timeRemaining = secondsLeft;
+        var createP2 = document.createElement("p");
+        clearInterval(holdInterval);
+        createP.textContent = "Your final score is: " + timeRemaining;
+
+        questionsDiv.appendChild(createP2);
+    }
