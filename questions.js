@@ -119,3 +119,7 @@ function compare(event) {
     questionsDiv.appendChild(createDiv);
 
 }
+//Added allDone function to append last page
+function allDone() {
+    questionsDiv.innerHTML = "";
+    currentTime.innerHTML = "";
