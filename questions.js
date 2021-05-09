@@ -152,3 +152,20 @@ function allDone() {
  createLabel.textContent = "Enter your initials: ";
 
  questionsDiv.appendChild(createLabel);
+
+  // Added input 
+  let createInput = document.createElement("input");
+  createInput.setAttribute("type", "text");
+  createInput.setAttribute("id", "initials");
+  createInput.textContent = "";
+
+  questionsDiv.appendChild(createInput);
+
+  // Added submit
+  let createSubmit = document.createElement("button");
+  createSubmit.setAttribute("type", "submit");
+  createSubmit.setAttribute("id", "Submit");
+  createSubmit.textContent = "Submit";
+
+  questionsDiv.appendChild(createSubmit);
+
