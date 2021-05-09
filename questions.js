@@ -132,17 +132,23 @@ function allDone() {
      questionsDiv.appendChild(createH1);
 
      // Paragraph
-     var createP = document.createElement("p");
+     let createP = document.createElement("p");
      createP.setAttribute("id", "createP");
  
      questionsDiv.appendChild(createP); 
 
      // Added if statement to calculate the time remaining then replace it with their score
     if (secondsLeft >= 0) {
-        var timeRemaining = secondsLeft;
-        var createP2 = document.createElement("p");
+        let timeRemaining = secondsLeft;
+        let createP2 = document.createElement("p");
         clearInterval(holdInterval);
         createP.textContent = "Your final score is: " + timeRemaining;
 
         questionsDiv.appendChild(createP2);
     }
+ // Added label to enter in initials after score is taken 
+ let createLabel = document.createElement("label");
+ createLabel.setAttribute("id", "createLabel");
+ createLabel.textContent = "Enter your initials: ";
+
+ questionsDiv.appendChild(createLabel);
