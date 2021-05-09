@@ -86,3 +86,36 @@ function render(questionIndex) {
         listItem.addEventListener("click", (compare));
     })
 }
+// Added event to compare users choices with the correct answer
+function compare(event) {
+    let element = event.target;
+
+    if (element.matches("li")) {
+
+        let createDiv = document.createElement("div");
+        createDiv.setAttribute("id", "createDiv");
+        // Added function if answer is correct to prompt a message and confirm the correct answer next to it
+        if (element.textContent == questions[questionIndex].answer) {
+            score++;
+            createDiv.textContent = "Correct! The answer is:  " + questions[questionIndex].answer;
+            // Correct condition 
+        } else {
+            // Added function if answer is incorrect to prompt a message and reveal the correct answer next to it
+            // Added penalty to deduct -5 seconds off secondsLeft count down for wrong answers
+            secondsLeft = secondsLeft - penalty;
+            createDiv.textContent = "Wrong! The correct answer is:  " + questions[questionIndex].answer;
+        }
+
+    }
+     // Added question index to determine the number question the user is on
+     questionIndex++;
+// Added if else statement to show last page with the user stats once all questions have been answered
+     if (questionIndex >= questions.length) {
+        allDone();
+        createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questions.length + " Correct!";
+    } else {
+        render(questionIndex);
+    }
+    questionsDiv.appendChild(createDiv);
+
+}
