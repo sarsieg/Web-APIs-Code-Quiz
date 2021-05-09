@@ -4,6 +4,8 @@ This quiz application is put together using Javascript, CSS and HTML. It shows t
 # Website
 
 [Live Link](https://sarsieg.github.io/Web-APIs-Code-Quiz/)
+![Screenshot](/assets/images/Screenshot(4).png)
+![Screenshot](/assets/images/Screenshot(11).png)
 
 ## License
 
