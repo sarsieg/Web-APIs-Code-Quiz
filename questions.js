@@ -30,3 +30,10 @@ let questions = [
 // Declared variables
 let score = 0;
 let questionIndex = 0;
+
+// Start working code 
+// Declared variables
+let currentTime = document.querySelector("#currentTime");
+let timer = document.querySelector("#startTime");
+let questionsDiv = document.querySelector("#questionsDiv");
+let wrapper = document.querySelector("#wrapper");
