@@ -40,7 +40,14 @@
 }
 
 body {
+    
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+a {
+    color:white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(129, 31, 80);
 }
 
 #clear {
@@ -118,8 +125,7 @@ left: 20%;
 
 a {
 margin-left: 20%;
-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-background-color: rgb(129, 31, 80);
+
 }
 #goBack {
     

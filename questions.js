@@ -1,4 +1,4 @@
-// Var with array and object for questions 
+// Let with array and object for questions 
 let questions = [
     {
         title: "Commonly used data types DO NOT include:",
@@ -37,3 +37,31 @@ let currentTime = document.querySelector("#currentTime");
 let timer = document.querySelector("#startTime");
 let questionsDiv = document.querySelector("#questionsDiv");
 let wrapper = document.querySelector("#wrapper");
+
+// Shows the seconds left is 15 seconds per question:
+let secondsLeft = 76;
+// Holds interval time
+let holdInterval = 0;
+// Holds penalty time
+let penalty = 10;
+// Creates new element
+let ulCreate = document.createElement("ul");
+
+// Added to trigger timer on button, then shows user a display on the screen
+timer.addEventListener("click", function () {
+    // Checking zero because it's initially set to zero
+    if (holdInterval === 0) {
+        holdInterval = setInterval(function () {
+            secondsLeft--;
+            currentTime.textContent = "Time: " + secondsLeft;
+
+            if (secondsLeft <= 0) {
+                clearInterval(holdInterval);
+                allDone();
+                currentTime.textContent = "Time's up!";
+            }
+        }, 1000);
+    }
+    render(questionIndex);
+});
+
