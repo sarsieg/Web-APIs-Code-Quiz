@@ -1,5 +1,5 @@
 // Let with array and object for questions 
-let questions = [
+var questions = [
     {
         title: "Commonly used data types DO NOT include:",
         choices: ["1. strings", "2. booleans", "3. alerts", "4. numbers"],
@@ -28,24 +28,24 @@ let questions = [
 
 ];
 // Declared variables
-let score = 0;
-let questionIndex = 0;
+var score = 0;
+var questionIndex = 0;
 
 // Start working code 
 // Declared variables
-let currentTime = document.querySelector("#currentTime");
-let timer = document.querySelector("#startTime");
-let questionsDiv = document.querySelector("#questionsDiv");
-let wrapper = document.querySelector("#wrapper");
+var currentTime = document.querySelector("#currentTime");
+var timer = document.querySelector("#startTime");
+var questionsDiv = document.querySelector("#questionsDiv");
+var wrapper = document.querySelector("#wrapper");
 
 // Shows the seconds left is 15 seconds per question:
-let secondsLeft = 76;
+var secondsLeft = 76;
 // Holds interval time
-let holdInterval = 0;
+var holdInterval = 0;
 // Holds penalty time
-let penalty = 10;
+var penalty = 10;
 // Creates new element
-let ulCreate = document.createElement("ul");
+var ulCreate = document.createElement("ul");
 
 // Added to trigger timer on button, then shows user a display on the screen
 timer.addEventListener("click", function () {
@@ -71,15 +71,15 @@ function render(questionIndex) {
     questionsDiv.innerHTML = "";
     ulCreate.innerHTML = "";
     // Added for loops to loop through all info in array
-    for (let i = 0; i < questions.length; i++) {
+    for (var i = 0; i < questions.length; i++) {
         // Appends question title only
-        let userQuestion = questions[questionIndex].title;
-        let userChoices = questions[questionIndex].choices;
+        var userQuestion = questions[questionIndex].title;
+        var userChoices = questions[questionIndex].choices;
         questionsDiv.textContent = userQuestion;
     }
     // New for each for question choices
     userChoices.forEach(function (newItem) {
-        let listItem = document.createElement("li");
+        var listItem = document.createElement("li");
         listItem.textContent = newItem;
         questionsDiv.appendChild(ulCreate);
         ulCreate.appendChild(listItem);
@@ -88,11 +88,11 @@ function render(questionIndex) {
 }
 // Added event to compare users choices with the correct answer
 function compare(event) {
-    let element = event.target;
+    var element = event.target;
 
     if (element.matches("li")) {
 
-        let createDiv = document.createElement("div");
+        var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
         // Added function if answer is correct to prompt a message and confirm the correct answer next to it
         if (element.textContent == questions[questionIndex].answer) {
@@ -125,36 +125,36 @@ function allDone() {
     currentTime.innerHTML = "";
 
 // Heading:
-     let createH1 = document.createElement("h1");
+     var createH1 = document.createElement("h1");
      createH1.setAttribute("id", "createH1");
      createH1.textContent = "All Done!"
  
      questionsDiv.appendChild(createH1);
 
      // Paragraph
-     let createP = document.createElement("p");
+     var createP = document.createElement("p");
      createP.setAttribute("id", "createP");
  
      questionsDiv.appendChild(createP); 
 
      // Added if statement to calculate the time remaining then replace it with their score
     if (secondsLeft >= 0) {
-        let timeRemaining = secondsLeft;
-        let createP2 = document.createElement("p");
+        var timeRemaining = secondsLeft;
+        var createP2 = document.createElement("p");
         clearInterval(holdInterval);
         createP.textContent = "Your final score is: " + timeRemaining;
 
         questionsDiv.appendChild(createP2);
     }
  // Added label to enter in initials after score is taken 
- let createLabel = document.createElement("label");
+ var createLabel = document.createElement("label");
  createLabel.setAttribute("id", "createLabel");
  createLabel.textContent = "Enter your initials: ";
 
  questionsDiv.appendChild(createLabel);
 
   // Added input 
-  let createInput = document.createElement("input");
+  var createInput = document.createElement("input");
   createInput.setAttribute("type", "text");
   createInput.setAttribute("id", "initials");
   createInput.textContent = "";
@@ -162,7 +162,7 @@ function allDone() {
   questionsDiv.appendChild(createInput);
 
   // Added submit
-  let createSubmit = document.createElement("button");
+  var createSubmit = document.createElement("button");
   createSubmit.setAttribute("type", "submit");
   createSubmit.setAttribute("id", "Submit");
   createSubmit.textContent = "Submit";
