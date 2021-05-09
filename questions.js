@@ -123,3 +123,10 @@ function compare(event) {
 function allDone() {
     questionsDiv.innerHTML = "";
     currentTime.innerHTML = "";
+
+// Heading:
+     let createH1 = document.createElement("h1");
+     createH1.setAttribute("id", "createH1");
+     createH1.textContent = "All Done!"
+ 
+     questionsDiv.appendChild(createH1);
